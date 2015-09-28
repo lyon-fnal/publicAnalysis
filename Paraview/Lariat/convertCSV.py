@@ -80,8 +80,7 @@ def doit(fname):
                 namez = dtypes[i+2][0]
                 if namey[-1].lower() == 'y' and namez[-1].lower() == 'z':
                   
-
-                    # We have a xyz array (assume float)
+                    # We have an xyz vector (assume float)
                     print 'Making array %s %s %s' % (name, namey, namez)
                     arrVtk = ns.numpy_to_vtk( d[ [name, namey, namez] ].view( (np.float, 3) ), 1, vtk.VTK_FLOAT )
                     arrVtk.SetName(name[:-1])
@@ -98,11 +97,11 @@ def doit(fname):
           if t == int:
               vtkType = vtk.VTK_INT
         
-          print 'Making array %s' % name
+          print 'Making scalar %s' % name
           arrVtk = ns.numpy_to_vtk( d[name].ravel(), 1, vtkType )
 
         else:  # Strings
-          print 'Making array (string) %s' % name
+          print 'Making scalar (string) %s' % name
           arrVtk = vtk.vtkStringArray()
           arrVtk.SetNumberOfValues( len( d[name] ) )
           for i, val in enumerate( d[name] ):
