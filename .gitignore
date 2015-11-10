@@ -3,4 +3,13 @@ downloads
 examples
 external
 manuals
-
+.ipynb_checkpoints
+.m4v
+.mp4
+.ogv
+.pyc
+.png
+.vti
+.vtp
+.vtu
+.npy
