@@ -13,3 +13,6 @@ manuals
 *.vtp
 *.vtu
 *.npy
+*.pvti
+*.x3d
+*.csv
