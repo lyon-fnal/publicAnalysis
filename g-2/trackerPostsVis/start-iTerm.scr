@@ -1,0 +1,14 @@
+tell application "iTerm"
+    activate
+    set myterm to (make new terminal)
+    tell myterm
+        launch session "Default Session"
+        tell the last session   
+            set name to "trackerPosts"
+            write text "source /cvmfs/oasis.opensciencegrid.org/gm2/prod/g-2/setup"
+            write text "cd ~/Development/g-2/temp/trackerPosts"
+            write text "setup gm2 v6_01_00 -q prof"
+            write text "export PATH=$PATH:/Applications/paraview4.3.1.app/Contents/bin"
+        end tell
+    end tell
+end tell

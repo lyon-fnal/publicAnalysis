@@ -1,0 +1,16 @@
+tell application "iTerm"
+    activate
+    set myterm to (make new terminal)
+    tell myterm
+        launch session "Default Session"
+        tell the last session   
+            set name to "project-20150529-badEvent80"
+            write text "source /cvmfs/oasis.opensciencegrid.org/gm2/prod/g-2/setup"
+            write text "cd ~/Development/g-2/projects/20150529/try/event80"
+            write text "source ../../localProducts_gm2_v6_01_00_debug/setup"
+            write text "setup ninja v1_5_3a"
+            write text ". mrb s"
+            write text "export PATH=$PATH:/Applications/paraview4.3.1.app/Contents/bin"
+        end tell
+    end tell
+end tell

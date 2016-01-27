@@ -1,0 +1,13 @@
+tell application "iTerm"
+    activate
+    set myterm to (make new terminal)
+    tell myterm
+        launch session "Default Session"
+        tell the last session        
+            write text "source /cvmfs/oasis.opensciencegrid.org/gm2/prod/g-2/setup"
+            write text "cd ~/Development/g-2/projects/20150529/try/"
+            write text "source ../localProducts_gm2_v6_01_00_debug/setup"
+            write text ". mrb s"
+        end tell
+    end tell
+end tell
